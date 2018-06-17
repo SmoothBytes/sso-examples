@@ -1,0 +1,21 @@
+{
+    "name": "smoothbytes/sso-examples",
+    "description": "Social&Loyal Simple Single Sign-On Examples",
+    "keywords": ["sso", "auth"],
+    "license": "MIT",
+    "homepage": "https://github.com/SmoothBytes/sso-examples",
+    "authors": [
+        {
+            "name": "Gamaliel Toro",
+            "email": "argami@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/SmoothBytes/sso-examples/issues",
+        "source": "https://github.com/SmoothBytes/sso-examples"
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "smoothbytes/sso": "^0.0.1"
+    }
+}
