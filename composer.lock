@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "837a198f1972d1b4e33222f66929eab3",
+    "content-hash": "f74c29118bb7a4d7d3cfd8ea855b58b9",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -130,6 +130,47 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "smoothbytes/api-client",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SmoothBytes/api-client.git",
+                "reference": "851fe4f06180937f996b2659707d27813869da27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SmoothBytes/api-client/zipball/851fe4f06180937f996b2659707d27813869da27",
+                "reference": "851fe4f06180937f996b2659707d27813869da27",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sal\\Api\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gamaliel Toro",
+                    "email": "argami@gmail.com"
+                }
+            ],
+            "description": "Social&Loyal Api PHP CLient",
+            "homepage": "https://github.com/SmoothBytes/api-client",
+            "keywords": [
+                "SSO",
+                "auth"
+            ],
+            "time": "2018-06-17T06:08:41+00:00"
         },
         {
             "name": "smoothbytes/sso",

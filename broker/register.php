@@ -3,13 +3,23 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Sal\SSO\NotAttachedException;
 
+$api = new Sal\Api\Client(getenv('API_KEY'), getenv('API_SECRET'), getenv('API_CLIENT_NAME'));
+
 $broker = new Sal\SSO\Broker(getenv('SSO_SERVER'), getenv('SSO_BROKER_ID'), getenv('SSO_BROKER_SECRET'));
 $broker->attach(true);
 
 try {
     if (!empty($_GET['logout'])) {
         $broker->logout();
-    } elseif ($broker->getUserInfo() || ($_SERVER['REQUEST_METHOD'] == 'POST' && $broker->login($_POST['username'], $_POST['password']))) {
+         
+    } elseif ($broker->getUserInfo()){
+
+        header("Location: index.php", true, 303);
+        exit;
+
+    } elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['email']) && !empty($_POST['password'])){
+        $api->register_user($_POST['email'], $_POST['username'], $_POST['surname'], $_POST['email'], $_POST['password']);
+        $broker->login($_POST['email'], $_POST['password']);
         header("Location: index.php", true, 303);
         exit;
     }
@@ -41,11 +51,24 @@ try {
 
             <?php if (isset($errmsg)): ?><div class="alert alert-danger"><?= $errmsg ?></div><?php endif; ?>
 
-            <form class="form-horizontal" action="login.php" method="post">
+            <form class="form-horizontal" action="register.php" method="post">
                 <div class="form-group">
-                    <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="email" class="form-control" id="inputEmail">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputUsername" class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-10">
                         <input type="text" name="username" class="form-control" id="inputUsername">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputUsername" class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="surname" class="form-control" id="inputUsername">
                     </div>
                 </div>
                 <div class="form-group">
@@ -57,12 +80,7 @@ try {
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Login</button>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-11 col-sm-1">
-                        <a href='register.php'>Register</a>
+                        <button type="submit" class="btn btn-default">Register</button>
                     </div>
                 </div>
             </form>
