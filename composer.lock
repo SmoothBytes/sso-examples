@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f74c29118bb7a4d7d3cfd8ea855b58b9",
+    "content-hash": "06c35a670dab0ccd91d7242c011f8ec7",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -133,16 +133,16 @@
         },
         {
             "name": "smoothbytes/api-client",
-            "version": "0.0.2",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SmoothBytes/api-client.git",
-                "reference": "851fe4f06180937f996b2659707d27813869da27"
+                "reference": "b52043cffbc7c86e193e8fd6356ba78a7a66c169"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SmoothBytes/api-client/zipball/851fe4f06180937f996b2659707d27813869da27",
-                "reference": "851fe4f06180937f996b2659707d27813869da27",
+                "url": "https://api.github.com/repos/SmoothBytes/api-client/zipball/b52043cffbc7c86e193e8fd6356ba78a7a66c169",
+                "reference": "b52043cffbc7c86e193e8fd6356ba78a7a66c169",
                 "shasum": ""
             },
             "require": {
@@ -170,7 +170,7 @@
                 "SSO",
                 "auth"
             ],
-            "time": "2018-06-17T06:08:41+00:00"
+            "time": "2018-06-17T06:25:32+00:00"
         },
         {
             "name": "smoothbytes/sso",

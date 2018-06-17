@@ -3,7 +3,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Sal\SSO\NotAttachedException;
 
-$api = new Sal\Api\Client(getenv('API_KEY'), getenv('API_SECRET'), getenv('API_CLIENT_NAME'));
+$api = new Sal\Api\Client(getenv('API_KEY'), getenv('API_SECRET'), getenv('API_CLIENT_NAME'), true);
 
 $broker = new Sal\SSO\Broker(getenv('SSO_SERVER'), getenv('SSO_BROKER_ID'), getenv('SSO_BROKER_SECRET'));
 $broker->attach(true);

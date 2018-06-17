@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-nginx ajax-broker/
+web: vendor/bin/heroku-php-nginx broker/
